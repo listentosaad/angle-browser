@@ -1,0 +1,15 @@
+# Cheap checks on GitHub-hosted runners. This is a shape check only;
+# it is never "done" on its own (see README).
+name: check
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: shellcheck
+        run: shellcheck scripts/arc-study/*.sh
+      - name: arc-study unit tests
+        run: python3 -m unittest discover -s scripts/arc-study -v

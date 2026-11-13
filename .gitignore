@@ -1,0 +1,14 @@
+# Chromium checkout and build output live outside git (see scripts/bootstrap.sh, phase 1).
+/chromium/
+/out/
+/depot_tools/
+/.gclient
+/.gclient_entries
+
+# Raw Arc-study captures. Review for personal data, then move into
+# docs/arc-study/<scenario>/ before committing.
+/docs/arc-study/_inbox/
+
+.DS_Store
+__pycache__/
+*.pyc
